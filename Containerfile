@@ -1,8 +1,5 @@
-# Base image
 FROM registry.access.redhat.com/ubi9/ubi-minimal
 
-# Set ENTRYPOINT to a shell script
-ENTRYPOINT ["echo", "Entrypoint says:"]
-
-# Set default CMD arguments
-CMD ["Default CMD message"]
+COPY greet.sh /usr/local/bin/
+ENTRYPOINT ["/usr/local/bin/greet.sh"]
+CMD ["OpenShift Lab", "Red Hat"]
